@@ -46,6 +46,7 @@ class HomeFragment : Fragment() {
         return binding.root
     }
     //Commment 2 for testing
+    //Comment 3 for testing
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initView()
