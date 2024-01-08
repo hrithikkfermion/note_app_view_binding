@@ -47,6 +47,7 @@ class HomeFragment : Fragment() {
     }
     //Commment 2 for testing
     //Comment 3 for testing
+    //Comment 4 for testing
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initView()
