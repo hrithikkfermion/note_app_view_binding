@@ -20,6 +20,15 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+    signingConfigs {
+        release {
+            storeFile file('C:/Users/User/AndroidStudioProjects/Note_App_VB/keystore/keystore.jks')
+            storePassword '123456'
+            keyAlias '123456'
+            keyPassword '123456'
+        }
+    }
+
 
     buildTypes {
         release {
@@ -31,6 +40,7 @@ android {
                 }
 
             }
+
         }
     }
     buildFeatures {

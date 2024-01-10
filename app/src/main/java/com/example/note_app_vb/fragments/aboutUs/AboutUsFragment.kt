@@ -1,6 +1,5 @@
 package com.example.note_app_vb.fragments.aboutUs
 
-import android.app.Activity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -18,7 +17,7 @@ import com.example.note_app_vb.databinding.FragmentAboutUsBinding
 
 
 class AboutUsFragment : Fragment() {
-    private lateinit var binding: com.example.note_app_vb.databinding.FragmentAboutUsBinding
+    private lateinit var binding: FragmentAboutUsBinding
     private val homeActivityViewModel by activityViewModels<HomeActivityViewModel>()
 
     override fun onCreateView(
@@ -36,7 +35,8 @@ class AboutUsFragment : Fragment() {
         initView()
     }
 
-    class MyWebViewClient constructor(private val activity: Activity, private val progressBar: ProgressBar) : WebViewClient() {
+
+    class MyWebViewClient(private val progressBar: ProgressBar) : WebViewClient() {
 
         override fun shouldOverrideUrlLoading(view: WebView?, request: WebResourceRequest?): Boolean {
             val url: String = request?.url.toString()
@@ -67,7 +67,7 @@ class AboutUsFragment : Fragment() {
         binding.apply {
             //We are passing progressBar to 'MyWebViewClient' as we can't access 'progressBar'
             // from Global access approach
-            wvAboutus.webViewClient = MyWebViewClient(root.context as Activity,progressBar)
+            wvAboutus.webViewClient = MyWebViewClient(progressBar)
             wvAboutus.loadUrl("https://www.javatpoint.com/")
         }
     }
